@@ -73,17 +73,6 @@ public class HorribleVermin extends person{
     }
 
     /**
-     * Lets Gregor charge at his father, causing his father to kill him. Ends the game.
-     */
-    public void chargeDad(){
-        System.out.println("You run full speed towards him, but he throws the apple directly towards your head, delivering a fatal blow.\n" + //
-                        "\n" + //
-                        "YOU HAVE DIED.\n" + //
-                        "\n" + //
-                        "THE END. ");
-    }
-
-    /**
      * Gregor runs away, and the user is prompted to choose their destination. Option B lets Gregor run to the stairwell, option B lets Gregor run to his parent's room, and option c lets Gregor run to his sister Grete's room.
      */
     public void runAway(){
@@ -103,6 +92,18 @@ public class HorribleVermin extends person{
                         "CHOOSE YOUR NEXT MOVE:\n" + //
                         "A: Move legs\n" + //
                         "B: Rock back and forth");
+    }
+
+    /**
+     * Gregor rocks back and forth in order to get out of bed, then the user is prompted to select their next move. Option A lets Gregor open the door, option B lets him open the window.
+     */
+    public void rock(){
+        System.out.println("Rocking back and forth, you finally get enough momentum to swing out of bed. You land on the ground with a plop. Glancing in the mirror, you see the full image monster you have become. You look like a beetle of some kind, but as tall lengthwise as a fully grown man. You gasp, but the sound that leaves your mouth sounds more like a hiss. Surely anyone who sees you in this condition would kill you on the spot! You think your family is still asleep.\n" + //
+                        "\n" + //
+                        "CHOOSE YOUR NEXT MOVE:\n" + //
+                        "\n" + //
+                        "A: Open the door\n" + //
+                        "B: Open the window");
     }
 
     /**

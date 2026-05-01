@@ -7,6 +7,7 @@ Note:  It's a good idea to also make this list available inside the game, in res
 
 If your game includes challenges that must be overcome to win, also list them below.
 
-Throughout the game, theuser has the option to type GIVE UP to refuse the game or to select from the given options at each step by typing A or B (or sometimes C).
+The user has two chances to give up, once at the very start of the game, and once when if the user chooses to go back to sleep, they can give up once they find out that they are already late.
+At every other fork, the user can enter A or B (and sometomes C) to select one of the predetermined options.
 
 The full storyboard can be found in the diagram linked here: https://drive.google.com/file/d/1j7rUIKWxXowWRkjpTSzk7vB4BGCL1W0l/view?usp=sharing 

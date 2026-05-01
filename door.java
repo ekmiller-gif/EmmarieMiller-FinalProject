@@ -13,7 +13,7 @@ public class door {
     
 
     /**
-     * Gives the user options for how to open the door when they choose to get the door. This command is only available in the game path where no one is yet awake.
+     * Gives the user options for how to open the door when they choose to get the door. This command is only available in the game path where no one is yet awake. Option A lets Gregor crawl up the doorframe to torn the handle with his mouth, and option B lets him knock down the door.
      */
     public void open(){
         System.out.println("Moving your many little legs, you scramble to the door, but your body lays close to the ground, too short in stature to reach the handle.\n" + //
