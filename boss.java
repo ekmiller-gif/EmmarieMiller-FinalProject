@@ -1,6 +1,5 @@
 public class boss extends person {
     
-    String name;
     String position;
 
     /**
@@ -8,8 +7,8 @@ public class boss extends person {
      * @param name name of boss figure
      * @param position position in the company
      */
-    public boss(String name, String position){
-        name = this.name;
+    public boss(String name, int age, String relationship, String position){
+        super(name, age, relationship);
         position = this.position;
     }
 
@@ -37,9 +36,9 @@ public class boss extends person {
     }
 
     public static void main(String[] args) {
-        boss ChiefClerk = new boss("Jeremy","Chief Clerk");
+        boss ChiefClerk = new boss("Jeremy", 39, "boss","Chief Clerk");
         ChiefClerk.fire();
-        boss president = new boss("Steve", "President of the Company");
+        boss president = new boss("Steve", 50, "big boss", "President of the Company");
         president.forgive();
     }
 }

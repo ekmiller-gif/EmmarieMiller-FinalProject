@@ -1,35 +1,17 @@
-public class HorribleVermin {
+public class HorribleVermin extends person{
     // Attributes
-    String name;
-    String job;
+    String job; //Occupation of vermin
 
     /**
      * Constructor for HorribleVermin
-     * @return void
      * @param name name of vermin
      * @param job job title of vermin
      */
-    public HorribleVermin(String name, String job){
-        this.name = name;
+    public HorribleVermin(String name, int age, String relationship, String job){
+        super(name, age, relationship);
         this.job = job;
     }
 
-
-    /**
-     * Accessor for name
-     * @return name name of vermin
-     */
-    public String getName(){
-        return name;
-    }
-
-    /**
-     * Constructor for job
-     * @return job occupation of vermin
-     */
-    public String getJob(){
-        return job;
-    }
 
     /**
      * Kills the user when the choose to walk to work
@@ -53,7 +35,7 @@ public class HorribleVermin {
                         "\n" + //
                         "THE END");
     }
-    
+
     /**
      * Fires the user from their job when they refuse to answer the chief clerk.
      */
@@ -66,7 +48,7 @@ public class HorribleVermin {
     }
 
     public static void main(String[] args) {
-        HorribleVermin gregor = new HorribleVermin("Gregor Samsa", "Traveling salesman");
+        HorribleVermin gregor = new HorribleVermin("Gregor Samsa", 27, "self", "Traveling salesman");
         gregor.walkToWork();
     }
 
