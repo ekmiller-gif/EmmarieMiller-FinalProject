@@ -117,7 +117,7 @@ public class play {
                                                         gregor.walkToWork();
                                                         stillPlaying = false; //end of game - lose.
 
-                                                    } if(userResponse.equals("B")){ 
+                                                    } else if(userResponse.equals("B")){ 
                                                         gregorWings.fly();
                                                         boss president = new boss("Steve", 57, "big boss", "president at Bank" );
                                                         president.forgive();
@@ -175,7 +175,7 @@ public class play {
                                 }
 
 
-                            } else{ //invalid response
+                            } else { //invalid response
                                 metamorphosis.wrongChoice();
                             }
 
@@ -273,7 +273,82 @@ public class play {
                                             metamorphosis.wrongChoice();
                                         }
                                 } else if (userResponse.equals("B")){ //knock down door
-                                    bedroomDoor.knockDown();
+                                    bedroomDoor.knockDown(); 
+                                    userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+
+                                    if(userResponse.equals("A")){
+                                        gregor.runAway();
+                                            userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+
+                                            if(userResponse.equals("A")){ //enter stairwell
+                                                room stairwell = new room("Exit Stairs", false);
+                                                stairwell.enter();
+
+                                                System.out.println("Ha! The chief clerk left the door cracked open, allowing you to flee to the stairwell, where you run down the stairs and into the open air on the streets.\n" + //
+                                                                                                        "\n" + //
+                                                                                                        "CHOOSE YOUR NEXT MOVE:\n" + //
+                                                                                                        "\n" + //
+                                                                                                        "A: Walk to work\n" + //
+                                                                                                        "B: Hey, my back itches! ");
+                                                    userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+
+                                                    if(userResponse.equals("A")){
+                                                        gregor.walkToWork();
+                                                        stillPlaying = false; //end of game - lose.
+
+                                                    } if(userResponse.equals("B")){ 
+                                                        gregorWings.fly();
+                                                        boss president = new boss("Steve", 57, "big boss", "president at Bank" );
+                                                        president.forgive();
+                                                        stillPlaying = false; //ends game - win!
+
+                                                    } else{ //invalid input
+                                                        metamorphosis.wrongChoice();
+                                                    }
+                                            } else if(userResponse.equals("B")){ // enter parent's room
+                                                room parentsRoom = new room("Mother and Father's room", true);
+                                                parentsRoom.enter();
+
+                                                System.out.println("A wise choice, but now your only exit is the window. \n" + //
+                                                                                                        "\n" + //
+                                                                                                        "You crawl up the wall to the windowsill and push the window open with your nose. You perch yourself on the windowsill and prepare to leap out.\n" + //
+                                                                                                        "\n" + //
+                                                                                                        "CHOOSE YOUR NEXT MOVE:\n" + //
+                                                                                                        "A: Jump\n" + //
+                                                                                                        "B: Hey, my back itches!");
+                                                    userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+
+                                                    if(userResponse.equals("A")){
+                                                        window parentWindow = new window("Mother and Father's room");
+                                                        parentWindow.jumpOut();
+                                                        stillPlaying = false; // ends game - lose.
+
+                                                    } if(userResponse.equals("B")){
+                                                        gregorWings.fly(); 
+                                                        //ends game - win!
+
+                                                    } else{ //invalid response
+                                                        metamorphosis.wrongChoice();
+                                                    }
+
+                                            } else if(userResponse.equals("C")){ //enter Grete's room
+                                                room sistersRoom = new room("Grete's room", false);
+                                                sistersRoom.enter();
+
+                                                apple grannySmith = new apple();
+                                                grannySmith.woundSide();
+                                                stillPlaying = false; //ends the game
+                            
+                                            } else{ //invalid response
+                                                metamorphosis.wrongChoice();
+                                            }                                     
+
+                                    } else if(userResponse.equals("B")){ //charge at father
+                                        apple crabApple = new apple();
+                                        crabApple.woundHead();
+                                    } else{
+                                        metamorphosis.wrongChoice();
+                                    }
 
                                 } else{
                                     metamorphosis.wrongChoice();
@@ -288,7 +363,7 @@ public class play {
                         System.out.println("Coward! Giving up on this mission is akin to letting you and your family die.\n" + //
                                         "You have failed!\n" + //
                                         "THE END.");
-                        stillPlaying = false;
+                        stillPlaying = false; //ends game - lose.
                     } else{
                         metamorphosis.wrongChoice();
                     }
@@ -297,14 +372,74 @@ public class play {
                     gregor.getUp();
                     userResponse = userInput.nextLine().toUpperCase(); //takes next user response
 
-                    if(userResponse.equals("A")){
-                        legs gregorsLegs = new legs(); //move legs
+                    if(userResponse.equals("A")){ //move legs
+                        legs gregorsLegs = new legs(); 
                         gregorsLegs.move();
+                        userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+
+                        if(userResponse.equals("A")){ //give up
+                            System.out.println("Coward! Giving up on this mission is akin to letting you and your family die.\n" + //
+                                                                "You have failed!\n" + //
+                                                                "THE END.");
+                        } else if(userResponse.equals("B")){ //rock back and forth
+                            gregor.rock();
+
+                            if(userResponse.equals("A")){ //open the door
+                                bedroomDoor.open();
+                                userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+
+                                if(userResponse.equals("A")){
+                                    bedroomDoor.crawlUpDoor();
+                                    System.out.println("ou bolt towards the stairwell, opening it the same way you did your bedroom door, and run down the stairs, exiting the building.\n" + //
+                                                                            "\n" + //
+                                                                            "CHOOSE YOUR NEXT MOVE:\n" + //
+                                                                            "\n" + //
+                                                                            "A: Walk to work\n" + //
+                                                                            "B: Hey, my back itches! ");
+                                    
+                                    userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+                                    if(userResponse.equals("A")){
+                                        gregor.walkToWork();
+                                        stillPlaying = false; //ends game - lose.
+                                    } else if(userResponse.equals("B")){
+                                        gregorWings.fly();
+                                        System.out.println("You march into work on time and find a place at the conference table for your morning meeting. Success! You are a model employee, and the very first horrible vermin to have a position at the bank.");
+                                        stillPlaying = false; //ends game - win!
+                                    }
+                                }else if(userResponse.equals("B")){ //knock down door
+                                    bedroomDoor.knockDown(); 
+                                    apple fuji = new apple();
+                                    fuji.woundHead();
+                                    stillPlaying = false; //ends game - lose.
+                                } else{ //invalid response
+                                    metamorphosis.wrongChoice(); 
+                                }
+                            } else if(userResponse.equals("B")){ //open window
+                                window gregorsWindow = new window("Gregor's room");
+                                gregorsWindow.open();
+                                userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+
+                                if(userResponse.equals("A")){
+                                    gregorsWindow.jumpOut();
+                                    stillPlaying = false; //ends game - lose.
+                                } else if(userResponse.equals("B")){
+                                    gregorWings.fly();
+                                    System.out.println("You march into work on time and find a place at the conference table for your morning meeting. Success! You are a model employee, and the very first horrible vermin to have a position at the bank.");
+                                    stillPlaying = false; //ends game - win!
+                                } else{
+                                    metamorphosis.wrongChoice();
+                                }
+
+                            } else{ //invalid response
+                                metamorphosis.wrongChoice();
+                            }
+                        }
 
                     } else if(userResponse.equals("B")) { //rock back and forth
                         gregor.rock();
+                        userResponse = userInput.nextLine().toUpperCase();
 
-                        if(userResponse.equals("A")){
+                        if(userResponse.equals("A")){ //open the door
                             bedroomDoor.open();
                             userResponse = userInput.nextLine().toUpperCase(); //takes next user response
 
@@ -326,17 +461,40 @@ public class play {
                                     System.out.println("You march into work on time and find a place at the conference table for your morning meeting. Success! You are a model employee, and the very first horrible vermin to have a position at the bank.");
                                     stillPlaying = false; //ends game - win!
                                 }
-                            }else if(userResponse.equals("B")){
-                                bedroomDoor.knockDown(); //pick up here
+                            }else if(userResponse.equals("B")){ //knock down door
+                                bedroomDoor.knockDown(); 
+                                apple fuji = new apple();
+                                fuji.woundHead();
+                                stillPlaying = false; //ends game - lose.
+                            } else{ //invalid response
+                                metamorphosis.wrongChoice(); 
                             }
+                        } else if(userResponse.equals("B")){ //open window
+                            window gregorsWindow = new window("Gregor's room");
+                            gregorsWindow.open();
+                            userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+
+                            if(userResponse.equals("A")){
+                                gregorsWindow.jumpOut();
+                                stillPlaying = false; //ends game - lose.
+                            } else if(userResponse.equals("B")){
+                                gregorWings.fly();
+                                System.out.println("You march into work on time and find a place at the conference table for your morning meeting. Success! You are a model employee, and the very first horrible vermin to have a position at the bank.");
+                                stillPlaying = false; //ends game - win!
+                            } else{
+                                metamorphosis.wrongChoice();
+                            }
+
                         }
                     } else{ //invalid response
-
+                        metamorphosis.wrongChoice();
                     }
+
                 } else{ //invalid response
-                    metamorphosis.wrongChoice(); //potential bug here: goes back to beginning after 
+                    metamorphosis.wrongChoice(); //bug with this command: goes back to beginning after 
                 }
             }
+        
 
         //Checks if the game is still ongoing
         } while (stillPlaying);
