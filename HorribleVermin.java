@@ -115,6 +115,19 @@ public class HorribleVermin extends person{
                         "YOU HAVE DIED.\n");
     }
 
+    /**
+     * Gregor bites his father, causing him to grab a weapon in defense, then the user is prompted to choose their next move. Option A lets gregor charge at his father, option B lets him run away.
+     */
+    public void biteDad(){
+        System.out.println("You let your animalistic anger consume you. Lurching forward, you chomp on your father's leg. Screaming, he runs away towards the kitchen and grabs an apple, which he weilds as a weapon.\n" + //
+                        "\n" + //
+                        "CHOOSE YOUR NEXT MOVE:\n" + //
+                        "\n" + //
+                        "A: Charge at him! \n" + //
+                        "B: Run away");
+
+        }
+    
 
     /**
      * Allows the user to explain himself when the chief clerk arrives at his home. Ends the story.
@@ -140,11 +153,10 @@ public class HorribleVermin extends person{
                         "THE END.");
     }
 
-    public static void main(String[] args) {
-        HorribleVermin gregor = new HorribleVermin("Gregor Samsa", 27, "self", "Traveling salesman");
-        gregor.walkToWork();
-    }
-
-
-
 }
+
+
+
+
+
+

@@ -158,7 +158,7 @@ public class play {
 
                                                 apple grannySmith = new apple();
                                                 grannySmith.woundSide();
-                                                stillPlaying = false; //ends the game
+                                                stillPlaying = false; //ends the game - lose.
                             
                                             } else{ //invalid response
                                                 metamorphosis.wrongChoice();
@@ -167,8 +167,136 @@ public class play {
                                         } else{ //invalid response
                                             metamorphosis.wrongChoice();
                                         }
-                                } else if (userResponse.equals("B")){ //knock down door
-                                    bedroomDoor.knockDown();
+                                } else if (userResponse.equals("B")){ //knock down door /incomplete
+                                    System.out.println("You walk backwards, stumbling and knocking down your desk chair as you scramble to the other end of the room. Full speed ahead, you slam your hard-shelled body into the door. A crack in the wood! Shrieks from your family and the chief clerk are heard from the other side. Backing up again, you give it another blow, and the door falls down. Your father and mother also appear in the doorway. \n" + //
+                                                                                "As the horrible creature that you have become appears to your visitors, looks of horror fall upon you.\n" + //
+                                                                                "\n" + //
+                                                                                "\"It's me! It's just me, Gregor!\" you utter in your newly gruff voice.\n" + //
+                                                                                "\"Gregor?\" your sister says with tenderness, but still tinged with disgust.\n" + //
+                                                                                "\"Mr. Samsa, what is the meaning of this? You will surely be fired if this is not resolved!\" says the chief clerk.\n" + //
+                                                                                "\n" + //
+                                                                                "The adrenaline kicks in and you begin to think of the dreary thankless life you've lived, working day in, day out to support your family, who has never once tried to pitch in, all because of your father's debt, and to appease your boss, who now threatens to fire you for being late once. Once! In your entire career! And now they all look at you with disgust, though you have done nothing. \n" + //
+                                                                                "\n" + //
+                                                                                "CHOOSE YOUR NEXT MOVE:\n" + //
+                                                                                "A: Bite your bastard father!\n" + //
+                                                                                "B: Bite your bastard boss!\n" + //
+                                                                                "C: Explain!");
+                                    userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+                                    boss chiefClerk = new boss("Jared", 37, "boss", "Chief clerk at Bank");
+
+                                    if(userResponse.equals("A")){ //Bite your father
+                                        userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+
+                                        if(userResponse.equals("A")){
+                                            System.out.println("You let your animalistic anger consume you. Lurching forward, you chomp on your father's leg. Screaming, he runs away towards the kitchen and grabs an apple, which he weilds as a weapon.\n" + //
+                                                                                                "\n" + //
+                                                                                                "CHOOSE YOUR NEXT MOVE:\n" + //
+                                                                                                "\n" + //
+                                                                                                "A: Charge at him! \n" + //
+                                                                                                "B: Run away");
+                                            userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+
+                                            if(userResponse.equals("A")){ //charge at him
+                                                apple gala = new apple();
+                                                gala.woundHead();
+
+                                                stillPlaying = false; //ends game - lose.
+                                            } else if(userResponse.equals("B")){ //run away
+                                                gregor.runAway();
+                                                userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+
+                                                if(userResponse.equals("A")){ //enter stairwell
+                                                    room stairwell = new room("Exit Stairs", false);
+                                                    stairwell.enter();
+
+                                                    System.out.println("Ha! The chief clerk left the door cracked open, allowing you to flee to the stairwell, where you run down the stairs and into the open air on the streets.\n" + //
+                                                                                                            "\n" + //
+                                                                                                            "CHOOSE YOUR NEXT MOVE:\n" + //
+                                                                                                            "\n" + //
+                                                                                                            "A: Walk to work\n" + //
+                                                                                                            "B: Hey, my back itches! ");
+                                                        userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+
+                                                        if(userResponse.equals("A")){
+                                                            gregor.walkToWork();
+                                                            stillPlaying = false; //end of game - lose.
+
+                                                        } if(userResponse.equals("B")){ 
+                                                            gregorWings.fly();
+                                                            boss president = new boss("Steve", 57, "big boss", "president at Bank" );
+                                                            president.forgive();
+                                                            stillPlaying = false; //ends game - win!
+
+                                                        } else{ //invalid input
+                                                            metamorphosis.wrongChoice();
+                                                        }
+                                                } else if(userResponse.equals("B")){ // enter parent's room
+                                                    room parentsRoom = new room("Mother and Father's room", true);
+                                                    parentsRoom.enter();
+
+                                                    System.out.println("A wise choice, but now your only exit is the window. \n" + //
+                                                                                                            "\n" + //
+                                                                                                            "You crawl up the wall to the windowsill and push the window open with your nose. You perch yourself on the windowsill and prepare to leap out.\n" + //
+                                                                                                            "\n" + //
+                                                                                                            "CHOOSE YOUR NEXT MOVE:\n" + //
+                                                                                                            "A: Jump\n" + //
+                                                                                                            "B: Hey, my back itches!");
+                                                        userResponse = userInput.nextLine().toUpperCase(); //takes next user response
+
+                                                        if(userResponse.equals("A")){
+                                                            window parentWindow = new window("Mother and Father's room");
+                                                            parentWindow.jumpOut();
+                                                            stillPlaying = false; // ends game - lose.
+
+                                                        } if(userResponse.equals("B")){
+                                                            gregorWings.fly(); 
+                                                            //ends game - win!
+
+                                                        } else{ //invalid response
+                                                            metamorphosis.wrongChoice();
+                                                        }
+
+                                                } else if(userResponse.equals("C")){ //enter Grete's room
+                                                    room sistersRoom = new room("Grete's room", false);
+                                                    sistersRoom.enter();
+
+                                                    apple pinkLady = new apple();
+                                                    pinkLady.woundSide();
+
+                                                    stillPlaying = false; //ends the game
+                                
+                                                } else{ //invalid response
+                                                    metamorphosis.wrongChoice();
+                                                }
+
+                                            } else{ //invalid response
+                                                metamorphosis.wrongChoice();
+                                            }
+
+                                        } else if(userResponse.equals("B")){
+
+                                        } else{ //invalid response
+                                            metamorphosis.wrongChoice();
+                                        }
+
+                                    } else if(userResponse.equals("B")){ //Bite your boss
+                                        chiefClerk.fire();
+
+                                        stillPlaying = false; //ends the game - lose.
+
+                                    } else if(userResponse.equals("C")){ //Explain yourself!
+                                        System.out.println("\"Mr. Clerk, you must know that I am unwell. In my years of work with the bank I have never once been late. Look at the horrible form I have become! You cannot fault me for such a thing! Do you see how I care for my family. Please sir, this job is all that I have!\"\n" + //
+                                                                                        "\n" + //
+                                                                                        "The chief clerk ponders your speech. \"You are right! I mustn't fault you for such a misfortune. You are forgiven - take the day off! You know what, I'll even recommend you for a raise!\"\n" + //
+                                                                                        "\n" + //
+                                                                                        "SUCCESS! \n" + //
+                                                                                        "\n" + //
+                                                                                        "THE END");
+
+                                        stillPlaying = false; // ends the game - win!
+                                    } else{
+                                        metamorphosis.wrongChoice();
+                                    }
 
                                 } else{
                                     metamorphosis.wrongChoice();
@@ -179,7 +307,7 @@ public class play {
                                 metamorphosis.wrongChoice();
                             }
 
-                        } else if(userResponse.equals("B")){
+                        } else if(userResponse.equals("B")){ //Should be stay quiet
                             gregor.getDoor();
                             userResponse = userInput.nextLine().toUpperCase(); //takes next user response
 
