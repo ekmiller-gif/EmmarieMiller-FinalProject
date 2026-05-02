@@ -167,7 +167,7 @@ public class play {
                                         } else{ //invalid response
                                             metamorphosis.wrongChoice();
                                         }
-                                } else if (userResponse.equals("B")){ //knock down door /incomplete
+                                } else if (userResponse.equals("B")){ //knock down door 
                                     System.out.println("You walk backwards, stumbling and knocking down your desk chair as you scramble to the other end of the room. Full speed ahead, you slam your hard-shelled body into the door. A crack in the wood! Shrieks from your family and the chief clerk are heard from the other side. Backing up again, you give it another blow, and the door falls down. Your father and mother also appear in the doorway. \n" + //
                                                                                 "As the horrible creature that you have become appears to your visitors, looks of horror fall upon you.\n" + //
                                                                                 "\n" + //
