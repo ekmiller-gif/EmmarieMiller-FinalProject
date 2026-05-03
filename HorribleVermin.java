@@ -1,5 +1,6 @@
 public class HorribleVermin extends person{
     // Attributes
+    String name;
     String job; //Occupation of vermin
 
     /**
@@ -73,7 +74,7 @@ public class HorribleVermin extends person{
     }
 
     /**
-     * Gregor runs away, and the user is prompted to choose their destination. Option B lets Gregor run to the stairwell, option B lets Gregor run to his parent's room, and option c lets Gregor run to his sister Grete's room.
+     * Gregor runs away, and the user is prompted to choose their destination. Option A lets Gregor run to the stairwell, option B lets Gregor run to his parent's room, and option c lets Gregor run to his sister Grete's room.
      */
     public void runAway(){
         System.out.println("Where will you go?\n" + //
